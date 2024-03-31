@@ -11,10 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('section', function (Blueprint $table) {
+        Schema::create('profiles', function (Blueprint $table) {
+            //give it to me from Profile.php
             $table->id();
-            $table->string('name');
-            $table->timestamps();
+            $table->string('username');
+            $table->string('email');
+            $table->string('address');
+            $table->string('phone');
         });
     }
 
@@ -23,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('section');
+        Schema::dropIfExists('profile');
     }
 };

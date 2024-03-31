@@ -11,12 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('assessment_approval', function (Blueprint $table) {
+        Schema::create('section_subjects', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('assessment_id')->constrained();
-            $table->foreignId('student_id')->constrained();
-            $table->integer('value');
-            $table->enum('status', ['pending', 'approved', 'rejected']);
+            $table->foreignId('section_id')->constrained();
+            $table->foreignId('subject_id')->constrained();
             $table->timestamps();
         });
     }
@@ -26,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('assessment_approval');
+        Schema::dropIfExists('section_subject');
     }
 };

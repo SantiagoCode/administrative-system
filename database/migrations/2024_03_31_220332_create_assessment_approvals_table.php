@@ -11,8 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('chat', function (Blueprint $table) {
+        Schema::create('assessment_approvals', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('assessment_id')->constrained();
+            $table->foreignId('student_id')->constrained();
+            $table->integer('value');
+            $table->enum('status', ['pending', 'approved', 'rejected']);
             $table->timestamps();
         });
     }
@@ -22,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('chat');
+        Schema::dropIfExists('assessment_approval');
     }
 };
