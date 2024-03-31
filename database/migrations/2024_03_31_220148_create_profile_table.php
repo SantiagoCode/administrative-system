@@ -12,8 +12,12 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('profile', function (Blueprint $table) {
+            //give it to me from Profile.php
             $table->id();
-            $table->timestamps();
+            $table->string('username');
+            $table->string('email');
+            $table->string('address');
+            $table->string('phone');
         });
     }
 

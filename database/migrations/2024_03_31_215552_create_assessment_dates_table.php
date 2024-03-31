@@ -13,6 +13,12 @@ return new class extends Migration
     {
         Schema::create('assessment_dates', function (Blueprint $table) {
             $table->id();
+            $table->date('date');
+            $table->time('start_time');
+            $table->time('end_time');
+            $table->integer('duration');
+            $table->foreignId('assessment_id')->constrained();
+            $table->integer('evaluation_number');
             $table->timestamps();
         });
     }

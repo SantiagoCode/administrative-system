@@ -13,6 +13,14 @@ return new class extends Migration
     {
         Schema::create('assessment', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->text('description');
+            $table->date('date');
+            $table->time('time');
+            $table->integer('duration');
+            $table->enum('status', ['pending', 'ongoing', 'finished']);
+            $table->foreignId('teacher_id')->constrained();
+            $table->foreignId('section_id')->constrained();
             $table->timestamps();
         });
     }

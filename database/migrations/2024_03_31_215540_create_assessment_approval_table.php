@@ -13,6 +13,10 @@ return new class extends Migration
     {
         Schema::create('assessment_approval', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('assessment_id')->constrained();
+            $table->foreignId('student_id')->constrained();
+            $table->integer('value');
+            $table->enum('status', ['pending', 'approved', 'rejected']);
             $table->timestamps();
         });
     }
