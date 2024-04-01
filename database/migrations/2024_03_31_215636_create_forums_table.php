@@ -15,8 +15,10 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->text('description');
-            $table->foreignId('user_id')->constrained();
+            $table->unsignedBigInteger('teacher_id');
             $table->timestamps();
+            
+            $table->foreign('teacher_id')->constrained()->references('id')->on('teachers');
         });
     }
 

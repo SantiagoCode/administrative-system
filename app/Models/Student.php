@@ -21,4 +21,19 @@ class Student extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+    public function student_section()
+    {
+        return $this->hasMany(StudentSection::class);
+    }
+
+    public function assessment_subject()
+    {
+        return $this->hasMany(AssessmentSubject::class);
+    }
+
+    public function subject_approval()
+    {
+        return $this->hasMany(SubjectApproval::class);
+    }
 }

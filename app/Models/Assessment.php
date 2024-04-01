@@ -32,4 +32,15 @@ class Assessment extends Model
     {
         return $this->belongsTo(Section::class);
     }
+
+    public function assessment_date()
+    {
+        return $this->belongsTo(AssessmentDate::class);
+    }
+
+    public function assessment_approval()
+    {
+        return $this->hasMany(AssessmentApproval::class);
+    }
+
 }

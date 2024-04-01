@@ -18,4 +18,9 @@ class AssessmentDates extends Model
         'assessment_id',
         'evaluation_number'
     ];
+
+    public function assessment()
+    {
+        return $this->hasMany(Assessment::class);
+    }
 }

@@ -16,13 +16,28 @@ class Section extends Model
         'name'
     ];
 
-    public function teachersections()
+    public function teacher_sections()
     {
-        return $this->hasMany(TeacherSection::class);
+        return $this->belongsToMany(TeacherSection::class);
     }
 
-    public function studentsections()
+    public function student_sections()
     {
-        return $this->hasMany(StudentSection::class);
+        return $this->belongsToMany(StudentSection::class);
+    }
+
+    public function section_carrers()
+    {
+        return $this->hasMany(SectionCarrer::class);
+    }
+    
+    public function section_subjects()
+    {
+        return $this->hasMany(SectionSubject::class);
+    }
+
+    public function assessment()
+    {
+        return $this->hasMany(Assessment::class);
     }
 }

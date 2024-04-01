@@ -43,4 +43,24 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    /**
+     * Define a one-to-many relationship with the Teacher model.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function teachers()
+    {
+        return $this->hasMany(Teacher::class);
+    }
+
+    /**
+     * Define a one-to-many relationship with the Student model.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function students()
+    {
+        return $this->hasMany(Student::class);
+    }
 }
