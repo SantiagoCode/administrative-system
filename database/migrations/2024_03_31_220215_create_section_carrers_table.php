@@ -13,9 +13,12 @@ return new class extends Migration
     {
         Schema::create('section_carrers', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('section_id')->constrained();
-            $table->foreignId('carrer_id')->constrained();
+            $table->unsignedBigInteger('section_id');
+            $table->unsignedBigInteger('carrer_id');
             $table->timestamps();
+
+            $table->foreignId('section_id')->constrained()->references('id')->on('sections');
+            $table->foreignId('carrer_id')->constrained()->references('id')->on('carrers');
         });
     }
 

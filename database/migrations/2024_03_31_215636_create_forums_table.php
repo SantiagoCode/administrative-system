@@ -13,9 +13,9 @@ return new class extends Migration
     {
         Schema::create('forums', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('teacher_id');
             $table->string('title');
             $table->text('description');
-            $table->unsignedBigInteger('teacher_id');
             $table->timestamps();
             
             $table->foreign('teacher_id')->constrained()->references('id')->on('teachers');

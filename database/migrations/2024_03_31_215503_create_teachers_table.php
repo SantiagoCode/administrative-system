@@ -14,10 +14,11 @@ return new class extends Migration
         Schema::create('teachers', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('user_id');
-            $table->string('profile_id');
+            $table->unsignedBigInteger('profile_id');
             $table->timestamps();
 
             $table->foreign('user_id')->constrained()->references('id')->on('users');
+            $table->foreign('profile_id')->constrained()->references('id')->on('profiles');
         });
     }
 

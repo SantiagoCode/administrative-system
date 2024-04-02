@@ -13,11 +13,14 @@ return new class extends Migration
     {
         Schema::create('subject_approvals', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('subject_id')->constrained();
-            $table->foreignId('student_id')->constrained();
+            $table->unsignedBigInteger('subject_id');
+            $table->unsignedBigInteger('student_id');
             $table->enum('status', ['pending', 'approved', 'rejected']);
             $table->integer('calification');
             $table->timestamps();
+
+            $table->foreignId('subject_id')->constrained()->references('id')->on('subjects');
+            $table->foreignId('student_id')->constrained()->references('id')->on('students');
         });
     }
 

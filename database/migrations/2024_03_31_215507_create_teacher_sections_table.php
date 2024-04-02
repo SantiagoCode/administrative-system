@@ -13,9 +13,12 @@ return new class extends Migration
     {
         Schema::create('teacher_sections', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('teacher_id')->constrained();
-            $table->foreignId('section_id')->constrained();
             $table->timestamps();
+            $table->unsignedBigInteger('teacher_id');
+            $table->unsignedBigInteger('section_id');
+
+            $table->foreignId('teacher_id')->constrained()->references('id')->on('teachers');
+            $table->foreignId('section_id')->constrained()->references('id')->on('sections');
         });
     }
 
