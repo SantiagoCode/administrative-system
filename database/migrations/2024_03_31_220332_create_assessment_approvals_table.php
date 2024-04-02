@@ -19,8 +19,8 @@ return new class extends Migration
             $table->enum('status', ['pending', 'approved', 'rejected']);
             $table->timestamps();
 
-            $table->foreignId('assessment_id')->constrained()->references('id')->on('assessments');
-            $table->foreignId('student_id')->constrained()->references('id')->on('students');
+            $table->foreign('assessment_id')->references('id')->on('assessments');
+            $table->foreign('student_id')->references('id')->on('students');
         });
     }
 

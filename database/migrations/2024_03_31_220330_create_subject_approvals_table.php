@@ -19,8 +19,8 @@ return new class extends Migration
             $table->integer('calification');
             $table->timestamps();
 
-            $table->foreignId('subject_id')->constrained()->references('id')->on('subjects');
-            $table->foreignId('student_id')->constrained()->references('id')->on('students');
+            $table->foreign('subject_id')->references('id')->on('subjects');
+            $table->foreign('student_id')->references('id')->on('students');
         });
     }
 

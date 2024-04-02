@@ -17,8 +17,8 @@ return new class extends Migration
             $table->unsignedBigInteger('chat_id');
             $table->timestamps();
 
-            $table->foreignId('user_id')->constrained()->references('id')->on('users');
-            $table->foreignId('chat_id')->constrained()->references('id')->on('chats');
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('chat_id')->references('id')->on('chats');
         });
     }
 

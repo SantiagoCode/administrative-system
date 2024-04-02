@@ -17,8 +17,8 @@ return new class extends Migration
             $table->unsignedBigInteger('carrer_id');
             $table->timestamps();
 
-            $table->foreignId('section_id')->constrained()->references('id')->on('sections');
-            $table->foreignId('carrer_id')->constrained()->references('id')->on('carrers');
+            $table->foreign('section_id')->references('id')->on('sections');
+            $table->foreign('carrer_id')->references('id')->on('carrers');
         });
     }
 

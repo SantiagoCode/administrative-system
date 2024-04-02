@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('students', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('profile_id');
             $table->string('name');
             $table->string('email');
             $table->string('phone');
@@ -21,6 +22,7 @@ return new class extends Migration
             $table->timestamps();
 
             $table->foreign('user_id')->constrained()->references('id')->on('users');
+            $table->foreign('profile_id')->constrained()->references('id')->on('profiles');
         });
     }
 

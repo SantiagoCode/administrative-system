@@ -21,7 +21,7 @@ return new class extends Migration
             $table->integer('evaluation_number');
             $table->timestamps();
 
-            $table->foreignId('assessment_id')->constrained()->references('id')->on('assessments');
+            $table->foreign('assessment_id')->references('id')->on('assessments');
         });
     }
 

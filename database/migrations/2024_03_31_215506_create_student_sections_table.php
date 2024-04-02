@@ -17,8 +17,8 @@ return new class extends Migration
             $table->unsignedBigInteger('student_id');
             $table->unsignedBigInteger('section_id');
 
-            $table->foreignId('student_id')->constrained()->references('id')->on('students');
-            $table->foreignId('section_id')->constrained()->references('id')->on('sections');
+            $table->foreign('student_id')->references('id')->on('students');
+            $table->foreign('section_id')->references('id')->on('sections');
         });
     }
 

@@ -23,8 +23,8 @@ return new class extends Migration
             $table->enum('status', ['pending', 'ongoing', 'finished']);
             $table->timestamps();
             
-            $table->foreignId('teacher_id')->constrained()->references('id')->on('teachers');
-            $table->foreignId('section_id')->constrained()->references('id')->on('sections');
+            $table->foreign('teacher_id')->references('id')->on('teachers');
+            $table->foreign('section_id')->references('id')->on('sections');
         });
     }
 
