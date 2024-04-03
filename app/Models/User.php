@@ -47,20 +47,20 @@ class User extends Authenticatable
     /**
      * Define a one-to-many relationship with the Teacher model.
      *
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     * @return \Illuminate\Database\Eloquent\Relations\hasOne
      */
     public function teachers()
     {
-        return $this->hasMany(Teacher::class);
+        return $this->hasOne(Teacher::class);
     }
 
     /**
      * Define a one-to-many relationship with the Student model.
      *
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     * @return \Illuminate\Database\Eloquent\Relations\hasOne
      */
     public function students()
     {
-        return $this->hasMany(Student::class);
+        return $this->hasOne(Student::class);
     }
 }

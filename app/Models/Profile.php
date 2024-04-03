@@ -21,11 +21,11 @@ class Profile extends Model
 
     public function teacher()
     {
-        return $this->belongsTo(Teacher::class);
+        return $this->hasMany(Teacher::class);
     }
 
     public function student()
     {
-        return $this->belongsTo(Student::class);
+        return $this->hasMany(Student::class);
     }
 }

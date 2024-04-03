@@ -18,12 +18,12 @@ class Section extends Model
 
     public function teacher_sections()
     {
-        return $this->belongsToMany(TeacherSection::class);
+        return $this->hasOne(TeacherSection::class);
     }
 
     public function student_sections()
     {
-        return $this->belongsToMany(StudentSection::class);
+        return $this->hasMany(StudentSection::class);
     }
 
     public function section_carrers()

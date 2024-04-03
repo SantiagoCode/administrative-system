@@ -5,24 +5,24 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Carrer;
-use App\Models\Section;
+use App\Models\Subject;
 
-class SectionCarrer extends Model
+class SubjectCarrer extends Model
 {
     use HasFactory;
 
     protected $fillable = [
-        'section_id',
+        'subject_id',
         'carrer_id'
     ]; 
 
     public function carrer()
     {
-        return $this->belongsTo(Carrer::class);
+        return $this->hasMany(Carrer::class);
     }
 
     public function section()
     {
-        return $this->belongsTo(Section::class);
+        return $this->hasMany(Subject::class);
     }
 }
