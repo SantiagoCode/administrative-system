@@ -4,7 +4,7 @@ This project represents a personal challenge that I set for myself to develop a 
 
 ## Description 👀
 
-This project is a version of a university administrative system for managing students and their activities.
+This project serves as a comprehensive university administrative system designed to streamline the management of student profiles and their associated activities.
 
 ## Screenshot 💻
 
@@ -36,7 +36,7 @@ Run dependencies
 composer install
 ```
 
-If you are using frontend dependencies
+Frontend dependencies
 
 ```bash
 npm install
