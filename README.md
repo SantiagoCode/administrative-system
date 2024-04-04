@@ -40,7 +40,7 @@ Frontend dependencies
 
 ```bash
 npm install
-# o
+# or
 yarn install
 ```
 
